@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>student</title>
+    <style>
+        body{   
+        }
+        .continer
+        {
+            width: 400px;
+            
+            background-color:#2f45;
+            margin-top: 50px;
+            margin: auto;
+            display: grid;
+            padding: 1px 20PX;
+            font-size: 20px;
+            font-weight: bolder;
+
+        }
+        input
+        {
+            width: 90%;
+            height: 25px;
+            display: flex;
+            margin-left:15px ;
+            border-radius: 20px;
+            font-size: 20px;
+            border: none;
+            text-align: center;
+        }
+        h1
+        {
+            text-align: center;
+        }
+        button{
+            width: 90%;
+            height: 30px;
+            margin-left:15px ;
+            border-radius: 10px;
+            font-size: 20px;
+            background-color: #bdbdbd;
+        }
+    </style>
+</head>
+<body>
+    <div class="continer">
+        <h1> Enter The Marks</h1>
+        Tamil   : <input type="number" id="num1"><br>
+        English : <input type="number" id="num2"><br>
+        Maths   : <input type="number" id="num3"><br>
+        Science   : <input type="number" id="num4"><br>
+        Social   : <input type="number" id="num5"><br>
+
+<!-- 
+        <h3 id="tam">TAMIL</h3>
+        <h3 id="eng">ENGLISH</h3>
+        <h3 id="mat">MATHS</h3>
+        <h3 id="sci">SCIENCE</h3>
+        <h3 id="soc">SOCIAL SCIENCE</h3> -->
+
+
+
+        <button onclick="jk()">Get Total</button>
+        <h3 id="resul"></h3>
+        <button onclick="kumar()">Get Highest Mark</button>
+        <h3 id="highest"></h3>
+        <button onclick="jaya()">Find pass or fail</button>
+        <h3 id="pass"></h3>
+        
+        
+    </div>
+ <script>
+    
+//   var a=5;
+//   var b=10;
+//   var c=20;
+//   var d=34;
+//   var e=30;
+//   var f=a+b+c+d+e;
+//   document.write(f);
+function jk(){
+
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var num3 = document.getElementById("num3").value;
+    var num4 = document.getElementById("num4").value;
+    var num5 = document.getElementById("num5").value;
+
+
+    var sum=Number(num1)+Number(num2)+Number(num3)+Number(num4)+Number(num5);
+
+
+    // DOCUMENT.getElementById("tam").innerHTML="Tamil : "+num1;
+    // DOCUMENT.getElementById("eng").innerHTML="ENGLISH : "+num1;
+    // DOCUMENT.getElementById("mat").innerHTML="MATHS : "+num1;
+    // DOCUMENT.getElementById("sci").innerHTML="SCIENCE : "+num1;
+    // DOCUMENT.getElementById("soc").innerHTML="SOCIAL : "+num1;
+
+
+
+    document.getElementById("resul").innerHTML="The Total Is:"+sum;
+
+    // if(num1<=34){
+    //    document.getElementById("tam").innerHTML="you are <h2>FAILL</h2>:"+num1;
+    // }
+    // else if (num1>=35 && num1>=100){
+    //     document.getElementById("tam").innerHTML="you are <h2>PASS</h2>:"+num1;
+    // }
+    // else
+    // {
+    //     document.getElementById("tam").innerHTML="you are <h2>food</h2>:"+num1;
+    // }
+   
+
+
+}
+
+
+function kumar(){
+
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var num3 = document.getElementById("num3").value;
+    var num4 = document.getElementById("num4").value;
+    var num5 = document.getElementById("num5").value;
+    
+    if(num1>num2 && num1>num3 && num1>num4 && num1>num5){
+        document.getElementById("highest").innerHTML="<h3>TAMIL</h3> is greatest mark : "+num1;
+     }
+    else if(num2>num1 && num2>num3 && num2>num4 && num2>num5){
+         document.getElementById("highest").innerHTML="English is greatest mark : "+num2;
+     }
+    else if(num3>num1 && num3>num2 && num3>num4 && num3>num5){
+         document.getElementById("highest").innerHTML="Maths is greatest mark : "+num3;
+     }
+     else if(num4>num1 && num4>num3 && num4>num2 && num4>num5){
+        document.getElementById("highest").innerHTML="Science is greatest mark : "+num4;
+    }
+    else if(num5>num1 && num5>num3 && num5>num4 && num5>num2){
+                 document.getElementById("highest").innerHTML="Social is greatest mark : "+num5;
+   }
+   
+}
+function jaya(){
+
+    
+    var num1 = document.getElementById("num1").value;
+    var num2 = document.getElementById("num2").value;
+    var num3 = document.getElementById("num3").value;
+    var num4 = document.getElementById("num4").value;
+    var num5 = document.getElementById("num5").value;
+
+
+    if(num1<35 || num2<35 || num3<35 || num4<35 || num5<35)
+    {
+        document.getElementById("pass").innerHTML="fail";
+    }
+    else{
+         document.getElementById("pass").innerHTML="PASS";
+    }
+}
+
+ </script>
+</body>
+</html>
